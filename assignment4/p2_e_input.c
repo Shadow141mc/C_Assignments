@@ -6,17 +6,23 @@ Write a program to read N positive integer numbers; if any input is zero, progra
 
 int main()
 {
-    int num, flag = 1;
-    while(flag)
+    int N, num, i;
+    printf("How many positive integers do you want to enter?\n");
+    scanf("%d", &N);
+    printf("Enter %d positive numbers:\n", N);
+    for(i = 1; i <= N; i++)
     {
-        printf("Enter a number = ");
+        printf("Enter = ");
         scanf("%d", &num);
         if(num == 0)
-            printf("Enter again!!\n");
-        if(num < 0)
         {
-            flag = 0;
-            printf("Program Terminated!");
+            printf("Wrong input, enter again!\n");
+            i--;
+        }
+        else if(num < 0)
+        {
+            printf("Program terminated!!");
+            break;
         }
     }
     return 0;
